@@ -49,20 +49,20 @@ const EditForm = ({setOpen}) => {
             <form onSubmit={(e) => formSubmitHandler(e)}>
                 <div className="mb-3">
                     <label htmlFor="name" className="block mb-2">Name</label>
-                    <input type="text" name="name" id="name" className=" outline-none border-2 border-blue-950 p-2 w-[50%]" ref={refName} value={name} onChange={(e) => { setName(e.target.value); e.target.classList.remove("border-red-600") }} />
+                    <input type="text" name="name" id="name"placeholder="Enter Your Name" className="capitalize outline-none border-2 border-blue-950 p-2 w-full md:w-[75%] lg:w-[50%]" ref={refName} value={name} onChange={(e) => { setName(e.target.value); e.target.classList.remove("border-red-600") }} />
                 </div>
                 <div className="mb-3">
                     <label htmlFor="profile-link" className="block mb-2">Profile Link</label>
-                    <input type="text" name="profile-link" id="profile-link" className="outline-none border-2 border-blue-950 p-2 w-[50%]" value={profileLink} onChange={(e) => setProfileLink(e.target.value)} />
+                    <input type="text" name="profile-link" id="profile-link" placeholder="Enter Your Image URL" className="outline-none border-2 border-blue-950 p-2 w-full  md:w-[75%] lg:w-[50%]" value={profileLink} onChange={(e) => setProfileLink(e.target.value)} />
                 </div>
                 <div className="mb-3">
                     <label htmlFor="age" className="block mb-2">Age</label>
-                    <input type="number" name="age" id="age" className="outline-none border-2 border-blue-950 p-2 w-[50%]" ref={refAge} value={age} onChange={(e) => { setAge(e.target.value); e.target.classList.remove("border-red-600") }} />
+                    <input type="number" name="age" id="age" placeholder="Enter Your Age" className="outline-none border-2 border-blue-950 p-2 w-full  md:w-[75%] lg:w-[50%]" ref={refAge} value={age} onChange={(e) => { setAge(e.target.value); e.target.classList.remove("border-red-600") }} />
                 </div>
 
-                <div>
-                    <button className="px-3 py-2 bg-yellow-600 text-yellow-100 text-opacity-90">
-                        Save Change
+                <div className="mt-6">
+                    <button className="px-3 py-2 bg-sky-600 text-white rounded-md">
+                        Save
                     </button>
                 </div>
             </form>
