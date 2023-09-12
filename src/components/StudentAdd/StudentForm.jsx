@@ -4,10 +4,10 @@ import { StudentContext } from "../../context/studentprovider";
 const StudentForm = () => {
     const [name, setName] = useState("");
     const [profileLink, setProfileLink] = useState("");
-    const [age, setAge] = useState(0);
+    const [age, setAge] = useState("");
 
-    const {setStudents, students} = useContext(StudentContext);
-    
+    const { setStudents, students } = useContext(StudentContext);
+
     const refName = useRef(null);
     const refAge = useRef(null);
 
@@ -45,19 +45,19 @@ const StudentForm = () => {
     }
 
     return (
-        <div className="container mx-auto">
+        <div className="ms-3">
             <form onSubmit={(e) => formSubmitHandler(e)}>
                 <div className="mb-3">
-                    <label htmlFor="name" className="block mb-2">Name</label>
-                    <input type="text" name="name" id="name" className=" outline-none border-2 border-blue-950 p-2 w-[50%]" ref={refName} value={name} onChange={(e) => { setName(e.target.value); e.target.classList.remove("border-red-600") }} />
+                    <label htmlFor="name" className="block mb-2 font-bold text-xl">Name</label>
+                    <input type="text" name="name" id="name" placeholder="Enter your name" className=" outline-none border-2 border-blue-950 p-2 w-[80%] lg:w-[50%]" ref={refName} value={name} onChange={(e) => { setName(e.target.value); e.target.classList.remove("border-red-600") }} />
                 </div>
                 <div className="mb-3">
-                    <label htmlFor="profile-link" className="block mb-2">Profile Link</label>
-                    <input type="text" name="profile-link" id="profile-link" className="outline-none border-2 border-blue-950 p-2 w-[50%]" value={profileLink} onChange={(e) => setProfileLink(e.target.value)} />
+                    <label htmlFor="profile-link" className="block mb-2 font-bold text-xl">Profile Link</label>
+                    <input type="text" name="profile-link" id="profile-link" placeholder="Enter your image url" className="outline-none border-2 border-blue-950 p-2 w-[80%] lg:w-[50%]" value={profileLink} onChange={(e) => setProfileLink(e.target.value)} />
                 </div>
                 <div className="mb-3">
-                    <label htmlFor="age" className="block mb-2">Age</label>
-                    <input type="number" name="age" id="age" className="outline-none border-2 border-blue-950 p-2 w-[50%]" ref={refAge} value={age} onChange={(e) => {setAge(e.target.value); e.target.classList.remove("border-red-600")}} />
+                    <label htmlFor="age" className="block mb-2 font-bold text-xl">Age</label>
+                    <input type="number" name="age" id="age" placeholder="Enter your age" className="outline-none border-2 border-blue-950 p-2 w-[80%] lg:w-[50%]" ref={refAge} value={age} onChange={(e) => { setAge(e.target.value); e.target.classList.remove("border-red-600") }} />
                 </div>
 
                 <div>
