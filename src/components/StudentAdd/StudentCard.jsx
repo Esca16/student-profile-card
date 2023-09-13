@@ -12,7 +12,7 @@ const StudentCard = ({ img_url, student_data, id }) => {
   return (
     <div className="basis-[40%] mx-auto md:basis-[30%]">
       <div>
-        <img className="w-full h-[200px] md:h-[250px] lg:h-[300px] xl:h-[350px] object-cover" src={img_url ? img_url : default_image} alt="ZNH" />
+        <img className="w-full h-[200px] md:h-[250px] lg:h-[300px] xl:h-[400px] object-cover" src={img_url ? img_url : default_image} alt="ZNH" />
       </div>
       <div className='mt-2'>
         <h2 className="capitalize">{student_data.name}</h2>
