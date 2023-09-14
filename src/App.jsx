@@ -4,6 +4,7 @@ import Home from './container/Home'
 import Student from './container/Student'
 import Counter from './container/Counter'
 import Header from './components/header'
+import StudentProfileContainer from './container/Student/StudentProfileContainer'
 // import StudentAdd from './components/StudentAdd'
 // import FirstComponent from './components/counter/FirstComponent'
 
@@ -31,7 +32,10 @@ function App() {
         <Header />
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/student' element={<Student />} />
+          <Route path='student'>
+            <Route path='' element={<Student />} />
+            <Route path=':studentId' element={<StudentProfileContainer />} />
+          </Route>
           <Route path='/counter' element={<Counter />} />
         </Routes>
       </BrowserRouter>
