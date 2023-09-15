@@ -23,7 +23,7 @@ const StudentProfile = () => {
             Profile Page
             {showStudent ? (
                 <div>
-                    <img src={showStudent.img_url || default_image} alt={showStudent.student_data.name} />
+                    <img src={showStudent.img_url || default_image} alt={showStudent.student_data.name} className=" h-[200px] md:h-[250px] lg:h-[300px] xl:h-[400px] object-cover" />
                     <h1>{showStudent.student_data.name}</h1>
                     <p>{showStudent.student_data.age}</p>
                 </div>
