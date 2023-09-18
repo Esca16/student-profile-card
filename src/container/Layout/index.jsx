@@ -1,9 +1,9 @@
-import React, { children, useContext, useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { AuthContext } from '../../context/AuthProvider'
 import { useLocation, useNavigate } from 'react-router-dom';
 import Header from '../../components/header';
 
-const LayOut = () => {
+const LayOut = ({children}) => {
     const { isAuth } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
