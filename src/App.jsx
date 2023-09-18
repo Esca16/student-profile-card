@@ -3,8 +3,11 @@ import './App.css'
 import Home from './container/Home'
 import Student from './container/Student'
 import Counter from './container/Counter'
-import Header from './components/header'
+// import Header from './components/header'
 import StudentProfileContainer from './container/Student/StudentProfileContainer'
+import AuthProvider from './context/AuthProvider'
+import LayOut from './container/Layout/Index'
+import { LogIn } from './container/Auth/Login'
 // import StudentAdd from './components/StudentAdd'
 // import FirstComponent from './components/counter/FirstComponent'
 
@@ -28,16 +31,21 @@ function App() {
       {/* <RouterProvider router={router} /> */}
       {/* <StudentAdd /> */}
       {/* <FirstComponent /> */}
+      {/* <Header /> */}
       <BrowserRouter>
-        <Header />
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='student'>
-            <Route path='' element={<Student />} />
-            <Route path=':studentId' element={<StudentProfileContainer />} />
-          </Route>
-          <Route path='/counter' element={<Counter />} />
-        </Routes>
+        <AuthProvider>
+          <LayOut>
+            <Routes>
+              <Route path='/' element={<Home />} />
+              <Route path='student'>
+                <Route path='' element={<Student />} />
+                <Route path=':studentId' element={<StudentProfileContainer />} />
+              </Route>
+              <Route path='/counter' element={<Counter />} />
+              <Route path='/login' element={<LogIn />} />
+            </Routes>
+          </LayOut>
+        </AuthProvider>
       </BrowserRouter>
     </>
   )
