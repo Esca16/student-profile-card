@@ -10,7 +10,7 @@ const Header = () => {
 
     const LogOutHandler = () => {
         setIsAuth(false);
-        navigate("/")
+        navigate("/login")
     }
     return (
         <header className="bg-cyan-950 py-4">
